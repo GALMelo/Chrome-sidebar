@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Sidebar",
+  "version": "1.0.0",
+  "description": "Barra lateral flutuante e compacta com atalhos personalizáveis e reutilização de abas abertas.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "floating.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Chrome Sidebar: mostrar ou ocultar barra"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
